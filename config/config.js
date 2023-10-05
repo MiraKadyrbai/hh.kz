@@ -1,4 +1,8 @@
 // config.js
+const fs = require('fs')
+const path = require('path')
+
+
 
 module.exports = {
     development: {
@@ -14,7 +18,12 @@ module.exports = {
       database: 'defaultdb',
       host: 'private-db-postgresql-sgp1-05777-do-user-14661844-0.b.db.ondigitalocean.com',
       dialect: 'postgres',
-      port: 25060
+      port: 25060,
+      dialectOptions: {
+        ssl: {
+            ca: fs.readFileSync(path.resolve("config", "ca-certificate.crt"))  // Замените на путь к вашему сертификату
+        }
+    }
     }
   };
   

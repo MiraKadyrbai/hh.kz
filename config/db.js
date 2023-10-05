@@ -14,7 +14,7 @@ if(process.env.NODE_ENV === "production"){
     port: dbConf.production.port,
     dialectOptions: {
       ssl: {
-        ca: fs.readFileSync(path.resolve('config','ca-certificate.crt'))
+        ca: fs.readFileSync(path.resolve("config","ca-certificate.crt"))
       }
     }
 });
