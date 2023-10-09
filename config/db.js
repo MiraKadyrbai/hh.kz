@@ -7,20 +7,20 @@ let sequelize;
 
 console.log(process.env);
 if(process.env.NODE_ENV === "production"){
-  console.log("here");
+  // console.log("here");
   sequelize = new Sequelize(dbConf.production.database,dbConf.production.username,dbConf.production.password,{
     host:dbConf.production.host,
     dialect:dbConf.production.dialect,
     port: dbConf.production.port,
     dialectOptions: {
-      ssl: {
-        ca: fs.readFileSync(path.resolve("config","ca-certificate.crt"))
-      }
+      // ssl: {
+      //   ca: fs.readFileSync(path.resolve("config","ca-certificate.crt"))
+      // }
     }
 });
 
 } else{
-  console.log("111");
+  // console.log("111");
   sequelize = new Sequelize(dbConf.development.database,dbConf.development.username,dbConf.development.password,{
     host:dbConf.development.host,
     dialect:dbConf.development.dialect,
